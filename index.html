@@ -2,214 +2,156 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Al-Jabri Hamid</title>
+<title>الجبري حميد</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
-  font-family:'Amiri', serif;
-  text<!DOCTYPE html>
-<html lang="ar">
-<head>
-
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<title>Al-Jabri Hamid</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display&family=Cairo&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:'Amiri', serif;
-  background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
-  background-size:cover;
-  background-position:center;
+  background:#000;
   color:white;
   text-align:center;
+  font-family:'Cairo', sans-serif;
 }
 
-/* طبقة هادئة فوق الخلفية */
-.overlay{
-  background:rgba(0,0,0,0.55);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-/* الصندوق الرئيسي */
+/* الصندوق */
 .box{
-  width:90%;
-  max-width:420px;
   padding:25px;
 }
 
-/* الاسم */
-.name{
-  font-size:40px;
+/* الاسم العربي */
+.ar-name{
   font-family:'Amiri', serif;
-  color:#fff;
-  margin-bottom:10px;
+  font-size:48px;
+  color:#8B5A2B; /* بني */
+  text-shadow:2px 2px 5px black;
 }
 
-/* تخصص */
-.spec{
-  font-size:18px;
-  margin:10px 0;
-  color:#fbbf24;
-}
-
-/* إعلان */
-.ads{
-  margin:15px 0;
-  padding:10px;
-  border:1px dashed white;
-  border-radius:10px;
-  font-size:14px;
-}
-
-/* زر واتساب ملون */
-.btn{
+/* الاسم الإنجليزي */
+.en-name{
+  font-family:'Playfair Display', serif;
+  font-size:20px;
+  color:white;
+  text-shadow:2px 2px 6px black;
+  border-bottom:1px solid #fff;
   display:inline-block;
+  padding-bottom:5px;
+  margin-bottom:20px;
+}
+
+/* عنوان المشاريع */
+.title{
+  margin-top:20px;
+  font-size:22px;
+  color:white;
+  border:2px solid white;
+  display:inline-block;
+  padding:5px 15px;
+  border-radius:10px;
+}
+
+/* عام لكل عنصر */
+.item{
   margin-top:15px;
-  padding:12px 25px;
-  text-decoration:none;
-  color:white;
-  border-radius:12px;
   font-size:18px;
-
-  background:linear-gradient(270deg,#25D366,#00c6ff,#ff4ecd,#ffcc00);
-  background-size:800% 800%;
-  animation:move 5s infinite linear, glow 1.5s infinite alternate;
+  line-height:1.8;
 }
 
-@keyframes move{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-@keyframes glow{
-  from{box-shadow:0 0 5px white;}
-  to{box-shadow:0 0 20px white;}
-}
-
-/* رقم أسفل */
-.phone{
-  margin-top:20px;
-  font-size:14px;
-  color:#ddd;
-}
-</style>
-</head>
-
-<body>
-
-<div class="overlay">
-
-  <div class="box">
-
-    <!-- الاسم -->
-    <div class="name">الجبري حميد</div>
-    <div class="name" style="font-size:22px; font-family:'Playfair Display';">
-      Al-Jabri Hamid
-    </div>
-
-    <!-- التخصص -->
-    <div class="spec">
-      🎨 تخصصي: تصاميم - مشاريع - أي شيء يطلبه الناس
-    </div>
-
-    <!-- إعلان -->
-    <div class="ads">
-      📢 إعلان / Advertisement<br>
-      مكان الإعلانات هنا
-    </div>
-
-    <!-- زر واتساب -->
-    <a class="btn" href="https://wa.me/773488133" target="_blank">
-      تواصل واتساب 💬
-    </a>
-
-    <!-- الرقم أسفل -->
-    <div class="phone">
-      📞 773488133
-    </div>
-
-  </div>
-
-</div>
-
-</body>
-</html>
-<meta charset="UTF-8">
-<title>Al-Jabri Hamid</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
+/* 1 تصميم بوستات */
+.post{
+  color:#00aaff;
   font-family:'Amiri', serif;
-  text-align:center;
-  color:white;
-  background:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21');
-  background-size:cover;
-  background-position:center;
+}
+.post-en{
+  color:#f1c40f;
+  font-size:14px;
 }
 
-/* الصندوق */
-.box{
-  background:rgba(0,0,0,0.65);
-  padding:30px;
-  margin-top:100px;
+/* فيديو + مواقع */
+.video{
+  color:#00ff66;
+  font-family:'Amiri', serif;
+}
+.video-en{
+  color:#f1c40f;
+  font-size:14px;
+}
+
+/* صفحات هبوط */
+.landing{
+  color:#ff4444;
+  font-family:'Amiri', serif;
+}
+.landing-en{
+  color:#f1c40f;
+  font-size:14px;
+}
+
+/* تسويق رقمي */
+.market{
+  color:#b266ff;
+  font-family:'Amiri', serif;
+}
+.market-en{
+  color:#f1c40f;
+  font-size:14px;
+}
+
+/* كتابة محتوى */
+.content{
+  color:#ffd700;
+  font-family:'Amiri', serif;
+  background:white;
   display:inline-block;
-  border-radius:15px;
+  padding:5px 10px;
+  border-radius:5px;
+}
+.content-en{
+  color:red;
+  font-size:14px;
 }
 
-/* الاسم العربي */
-.arabic{
-  font-size:45px;
-  color:#38bdf8;
-}
-
-/* الاسم الإنجليزي */
-.english{
-  font-family:'Playfair Display', serif;
-  font-size:25px;
-  color:#fbbf24;
-}
-
-/* زر واتساب يلمع */
-.btn{
+/* شعارات */
+.logo{
+  color:#aaa;
+  background:red;
   display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
-  background:#25D366;
+  padding:5px 10px;
+  font-family:'Amiri', serif;
+}
+.logo-en{
   color:white;
-  text-decoration:none;
-  border-radius:12px;
-  font-size:18px;
-  animation: glow 1.5s infinite alternate;
+  font-size:14px;
 }
 
-@keyframes glow{
-  from{box-shadow:0 0 5px #25D366;}
-  to{box-shadow:0 0 20px #25D366;}
+/* UI/UX */
+.uiux{
+  color:#aaa;
+  background:red;
+  display:inline-block;
+  padding:5px 10px;
+  font-family:'Amiri', serif;
+}
+.uiux-en{
+  color:white;
+  font-size:14px;
 }
 
-/* الإعلان */
-.ads{
-  margin-top:25px;
-  padding:15px;
-  border:1px dashed #fff;
-  border-radius:10px;
-  font-family:'Playfair Display', serif;
+/* رقم الاتصال */
+.phone{
+  margin-top:30px;
+  font-size:20px;
+  color:#00ff66;
+}
+.phone-en{
+  color:white;
+  font-size:14px;
+}
+
+/* أيقونة الاتصال */
+.call{
+  font-size:30px;
 }
 </style>
 </head>
@@ -218,100 +160,57 @@ body{
 
 <div class="box">
 
-  <div class="arabic">الجبري حميد</div>
+<!-- الاسم -->
+<div class="ar-name">الجبري حميد</div>
+<div class="en-name">Al-Jabri Hamid</div>
 
-  <div class="english">Al-Jabri Hamid</div>
+<!-- المشاريع -->
+<div class="title">المشاريع</div>
 
-  <p>موقع شخصي احترافي 🌐</p>
+<!-- 1 -->
+<div class="item post">✔️ تصميم بوستات</div>
+<div class="post-en">Post Design</div>
 
-  <a class="btn" href="https://wa.me/773488133" target="_blank">
-    تواصل واتساب 💬
-  </a>
+<div class="item video">+ فيديو + مواقع</div>
+<div class="video-en">Video & Websites</div>
 
-  <div class="ads">
-    <div>إعلان / Advertisement</div>
-    <div>مكان الإعلانات هنا 💰</div>
-  </div>
+<div class="item landing">+ صفحات هبوط</div>
+<div class="landing-en">Landing Pages</div>
 
+<div class="item market">✔️ تسويق رقمي</div>
+<div class="market-en">Digital Marketing</div>
+
+<hr>
+
+<!-- 2 -->
+<div class="item post">✔️ تصميم إشعارات وبوستات</div>
+<div class="post-en">Notification & Posts Design</div>
+
+<div class="item video">✔️ فيديوهات وصناعة محتوى</div>
+<div class="video-en">Video & Content Creation</div>
+
+<hr>
+
+<!-- 3 -->
+<div class="item content">كتابة مقالات ومحتوى مواقع</div>
+<div class="content-en">Article & Website Content Writing</div>
+
+<hr>
+
+<!-- 4 -->
+<div class="item logo">1_ تصميم شعارات (Logo Design)</div>
+<div class="logo-en">Logo Design</div>
+
+<div class="item uiux">2_ تصميم واجهات UI/UX</div>
+<div class="uiux-en">UI/UX Design</div>
+
+<hr>
+
+<!-- رقم -->
+<div class="phone">
+☎️ 773488133
 </div>
-
-</body>
-</html>;
-  color:white;
-  background:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21');
-  background-size:cover;
-  background-position:center;
-}
-
-/* الصندوق */
-.box{
-  background:rgba(0,0,0,0.65);
-  padding:30px;
-  margin-top:100px;
-  display:inline-block;
-  border-radius:15px;
-}
-
-/* الاسم العربي */
-.arabic{
-  font-size:45px;
-  color:#38bdf8;
-}
-
-/* الاسم الإنجليزي */
-.english{
-  font-family:'Playfair Display', serif;
-  font-size:25px;
-  color:#fbbf24;
-}
-
-/* زر واتساب يلمع */
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
-  background:#25D366;
-  color:white;
-  text-decoration:none;
-  border-radius:12px;
-  font-size:18px;
-  animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow{
-  from{box-shadow:0 0 5px #25D366;}
-  to{box-shadow:0 0 20px #25D366;}
-}
-
-/* الإعلان */
-.ads{
-  margin-top:25px;
-  padding:15px;
-  border:1px dashed #fff;
-  border-radius:10px;
-  font-family:'Playfair Display', serif;
-}
-</style>
-</head>
-
-<body>
-
-<div class="box">
-
-  <div class="arabic">الجبري حميد</div>
-
-  <div class="english">Al-Jabri Hamid</div>
-
-  <p>موقع شخصي احترافي 🌐</p>
-
-  <a class="btn" href="https://wa.me/773488133" target="_blank">
-    تواصل واتساب 💬
-  </a>
-
-  <div class="ads">
-    <div>إعلان / Advertisement</div>
-    <div>مكان الإعلانات هنا 💰</div>
-  </div>
+<div class="phone-en">Contact Number</div>
 
 </div>
 
