@@ -160,4 +160,73 @@ footer{
   </div>
 
   <div class="box purple">
-    ✔️ تسويق
+    ✔️ تسويق رقمي
+    <span class="en">Digital Marketing</span>
+  </div>
+
+  <div class="box gray">
+    ✔️ تصميم إشعارات وبوستات
+    <span class="en">Notifications & Posts Design</span>
+  </div>
+
+  <div class="box gray">
+    ✔️ صناعة فيديو ومحتوى
+    <span class="en">Video & Content Creation</span>
+  </div>
+
+  <div class="box gold">
+    ✔️ كتابة مقالات ومحتوى مواقع
+    <span class="en">Articles & Website Content</span>
+  </div>
+
+  <div class="box gray">
+    ✔️ تصميم شعارات (Logo Design)
+    <span class="en">Logo Design</span>
+  </div>
+
+  <div class="box gray">
+    ✔️ تصميم واجهات (UI/UX)
+    <span class="en">UI / UX Design</span>
+  </div>
+
+  <div class="box green">
+    ✔️ خدمات رقمية واتساب مباشر
+    <span class="en">WhatsApp Direct Services</span>
+  </div>
+
+  <!-- زر واتساب -->
+  <a class="btn" href="https://wa.me/773488133" target="_blank">
+    💬 تواصل واتساب | WhatsApp
+  </a>
+
+  <!-- رقم -->
+  <div class="phone">📞 773488133</div>
+
+  <!-- عداد زوار -->
+  <div class="visitors">
+    👁️ عدد الزوار:
+    <span id="count">0</span>
+  </div>
+
+  <footer>
+    All Rights Reserved | جميع الحقوق محفوظة
+  </footer>
+
+</div>
+
+<script>
+// عداد زوار بسيط بدون Firebase
+let count = localStorage.getItem("visits");
+
+if(!count){
+  count = 1;
+}else{
+  count = parseInt(count) + 1;
+}
+
+localStorage.setItem("visits", count);
+document.getElementById("count").innerText = count;
+</script>
+
+</body>
+</html>
