@@ -9,20 +9,25 @@
 
 <style>
 
+/* ✅ مهم: السماح بالتمرير */
 body{
   margin:0;
   font-family:'Cairo', sans-serif;
   background:#000;
   color:white;
   text-align:center;
-  overflow:hidden;
+
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 
-/* خلفية برمجة */
+/* خلفية */
 canvas{
   position:fixed;
   top:0;
   left:0;
+  width:100%;
+  height:100%;
   z-index:-1;
 }
 
@@ -31,8 +36,7 @@ canvas{
   position:relative;
   z-index:1;
   padding:20px;
-  background:rgba(0,0,0,0.6);
-  min-height:100vh;
+  min-height:auto;
 }
 
 /* ترحيب */
@@ -97,7 +101,7 @@ canvas{
   color:#ffd700;
 }
 
-/* زر واتساب */
+/* واتساب */
 .btn{
   display:inline-block;
   margin:25px;
@@ -132,9 +136,10 @@ canvas{
 
 /* footer */
 footer{
-  margin-top:20px;
+  margin-top:30px;
   font-size:12px;
   color:#aaa;
+  padding-bottom:30px;
 }
 
 </style>
@@ -142,7 +147,6 @@ footer{
 
 <body>
 
-<!-- خلفية برمجة -->
 <canvas id="matrix"></canvas>
 
 <div class="content">
@@ -162,18 +166,17 @@ footer{
 <div class="box gold">✔️ كتابة مقالات<span class="en">Article Writing</span></div>
 <div class="box pink">✔️ تصميم شعارات<span class="en">Logo Design</span></div>
 <div class="box lime">✔️ UI / UX تصميم<span class="en">UI / UX Design</span></div>
-<div class="box green">✔️ خدمات واتساب مباشرة<span class="en">WhatsApp Services</span></div>
 
-<!-- واتساب (مهم جداً) -->
+<!-- واتساب -->
 <a class="btn" href="https://wa.me/773488133" target="_blank">
 💬 تواصل واتساب
 </a>
 
 <div class="phone">📞 773488133</div>
 
+<!-- زوار -->
 <div class="visitors">
-👁️ عدد الزوار:
-<span id="count">0</span>
+👁️ عدد الزوار: <span id="count">0</span>
 </div>
 
 <footer>
@@ -188,23 +191,27 @@ All Rights Reserved | جميع الحقوق محفوظة
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resize(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
 
 let letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*";
 letters = letters.split("");
 
-const fontSize = 14;
-const columns = canvas.width / fontSize;
+let fontSize = 14;
+let columns = canvas.width / fontSize;
 
 let drops = [];
 
 for(let i=0;i<columns;i++){
-  drops[i] = 1;
+  drops[i] = Math.random() * canvas.height;
 }
 
 function draw(){
-  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillStyle = "rgba(0,0,0,0.08)";
   ctx.fillRect(0,0,canvas.width,canvas.height);
 
   ctx.fillStyle = "#00ff66";
@@ -212,16 +219,19 @@ function draw(){
 
   for(let i=0;i<drops.length;i++){
     let text = letters[Math.floor(Math.random()*letters.length)];
-    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+    ctx.fillText(text, i*fontSize, drops[i]);
 
-    if(drops[i]*fontSize > canvas.height && Math.random() > 0.975){
+    drops[i] += 3;
+
+    if(drops[i] > canvas.height){
       drops[i] = 0;
     }
-    drops[i]++;
   }
+
+  requestAnimationFrame(draw);
 }
 
-setInterval(draw, 33);
+draw();
 
 /* عداد الزوار */
 let count = localStorage.getItem("visits");
@@ -232,10 +242,4 @@ if(!count){
   count = parseInt(count) + 1;
 }
 
-localStorage.setItem("visits", count);
-document.getElementById("count").innerText = count;
-
-</script>
-
-</body>
-</html>
+localStorage.setItem
