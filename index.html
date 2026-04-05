@@ -1,67 +1,178 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>موقعي</title>
+<title>الجبري حميد</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&display=swap" rel="stylesheet">
 
 <style>
+
 body{
   margin:0;
-  font-family:Arial;
+  font-family:'Cairo', sans-serif;
   background:black;
   color:white;
   text-align:center;
+  overflow:hidden;
 }
 
-.box{
-  margin:15px;
-  padding:15px;
-  background:#111;
+/* خلفية */
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+/* المحتوى */
+.content{
+  position:relative;
+  z-index:2;
+  padding:20px;
+}
+
+/* الاسم */
+.name{
+  font-size:50px;
+  font-family:'Amiri';
+  color:#8B4513;
+  margin-top:20px;
+}
+
+.name-en{
+  color:white;
+  border:2px solid white;
+  display:inline-block;
+  padding:5px 15px;
   border-radius:10px;
-}
-
-.en{
-  color:#ffd700;
-  font-size:14px;
   margin-top:5px;
 }
 
+/* المشاريع */
+.box{
+  background:rgba(255,255,255,0.05);
+  margin:10px auto;
+  padding:12px;
+  width:90%;
+  max-width:600px;
+  border-radius:12px;
+}
+
+/* ألوان */
+.blue{color:#00aaff;}
+.green{color:#00ff66;}
+.red{color:#ff4444;}
+.purple{color:#cc66ff;}
+.orange{color:#ff8800;}
+.gold{color:#ffd700;}
+
+/* واتساب */
 .btn{
   display:inline-block;
-  margin:20px;
-  padding:15px 25px;
+  margin-top:20px;
+  padding:14px 25px;
+  border-radius:30px;
   background:#25D366;
   color:white;
   text-decoration:none;
-  border-radius:30px;
+  font-size:18px;
+  position:relative;
+  z-index:5;
 }
+
+/* عداد */
+.visitors{
+  margin-top:10px;
+  color:#fff;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>الجبري حميد</h1>
-<div class="en">Al-Jabri Hamid</div>
+<canvas id="matrix"></canvas>
 
-<div class="box">
-✔️ تصميم بوستات
-<div class="en">Post Design</div>
-</div>
+<div class="content">
 
-<div class="box">
-✔️ فيديو + مواقع
-<div class="en">Video & Websites</div>
-</div>
+<h1 class="name">الجبري حميد</h1>
+<div class="name-en">Al-Jabri Hamid</div>
 
-<div class="box">
-✔️ تسويق رقمي
-<div class="en">Digital Marketing</div>
-</div>
+<h3>المشاريع</h3>
 
+<div class="box blue">✔️ تصميم بوستات</div>
+<div class="box green">✔️ فيديو + مواقع</div>
+<div class="box red">✔️ صفحات هبوط</div>
+<div class="box purple">✔️ تسويق رقمي</div>
+<div class="box orange">✔️ تصميم إشعارات</div>
+<div class="box gold">✔️ كتابة محتوى</div>
+
+<!-- واتساب -->
 <a class="btn" href="https://wa.me/773488133" target="_blank">
-💬 واتساب
+💬 تواصل واتساب
 </a>
+
+<!-- عداد زوار -->
+<div class="visitors">
+👁️ عدد الزوار: <span id="count">0</span>
+</div>
+
+</div>
+
+<script>
+
+/* خلفية برمجة */
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let letters = "01ABCDEF@#$%";
+letters = letters.split("");
+
+let fontSize = 14;
+let columns = canvas.width / fontSize;
+
+let drops = [];
+
+for(let i=0;i<columns;i++){
+  drops[i] = 1;
+}
+
+function draw(){
+  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle = "#00ff66";
+  ctx.font = fontSize + "px monospace";
+
+  for(let i=0;i<drops.length;i++){
+    let text = letters[Math.floor(Math.random()*letters.length)];
+    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+
+    if(drops[i]*fontSize > canvas.height) drops[i] = 0;
+    drops[i]++;
+  }
+}
+
+setInterval(draw, 40);
+
+/* عداد زوار */
+let count = localStorage.getItem("visits");
+
+if(!count){
+  count = 1;
+}else{
+  count = parseInt(count) + 1;
+}
+
+localStorage.setItem("visits", count);
+document.getElementById("count").innerText = count;
+
+</script>
 
 </body>
 </html>
