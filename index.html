@@ -90,3 +90,62 @@ header{
   text-align:center;
   margin:20px;
   color:#ccc;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="name">الجبري حميد</div>
+  <div class="sub">خدمات رقمية احترافية</div>
+  <div class="sub">Professional Digital Services</div>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    ✔️ تصميم بوستات
+    <div class="en">Post Design</div>
+    <div class="price">5$</div>
+  </div>
+
+  <div class="card">
+    ✔️ إنشاء مواقع
+    <div class="en">Website Development</div>
+    <div class="price">20$</div>
+  </div>
+
+  <div class="card">
+    ✔️ تسويق رقمي
+    <div class="en">Digital Marketing</div>
+    <div class="price">10$</div>
+  </div>
+
+  <div class="card">
+    ✔️ فيديوهات وصناعة محتوى
+    <div class="en">Video & Content Creation</div>
+    <div class="price">7$</div>
+  </div>
+
+</div>
+
+<a class="btn" href="https://wa.me/773488133" target="_blank">
+💬 تواصل واتساب | Contact WhatsApp
+</a>
+
+<div class="counter">
+👁 عدد الزوار | Visitors: <span id="visits">0</span>
+</div>
+
+<a class="whatsapp" href="https://wa.me/773488133">💬</a>
+
+<script>
+let count = localStorage.getItem("visits") || 0;
+count++;
+localStorage.setItem("visits", count);
+document.getElementById("visits").innerText = count;
+</script>
+
+</body>
+</html>
