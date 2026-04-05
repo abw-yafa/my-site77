@@ -3,91 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الجبري حميد</title>
+<title>الجبري حميد | Al-Jabri Hamid</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   font-family:'Cairo', sans-serif;
+  background:#0a0a0a;
   color:white;
-
-/* خلفية صورة */
-  background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
-  background-size:cover;
-  background-position:center;
-}
-
-/* طبقة تغميق */
-.overlay{
-  background:rgba(0,0,0,0.65);
-  min-height:100vh;
-  padding-bottom:30px;
 }
 
 /* الهيدر */
 header{
   text-align:center;
-  padding:30px 20px;
-}
-
-.welcome{
-  font-size:28px;
-  color:#fff;
-}
-
-.welcome-en{
-  font-size:14px;
-  color:#ccc;
-  margin-bottom:15px;
+  padding:25px;
 }
 
 .name{
-  font-family:'Amiri', serif;
-  font-size:55px;
-  color:#8B5A2B;
+  font-size:45px;
+  color:#00ff99;
 }
 
-.en{
-  font-size:18px;
-  color:#fff;
-  border-bottom:1px solid #555;
-  display:inline-block;
-  padding-bottom:5px;
+.sub{
+  color:#aaa;
+  font-size:14px;
 }
 
 /* الأقسام */
 .container{
-  max-width:800px;
+  max-width:900px;
   margin:auto;
-  padding:20px;
-}
-
-.section{
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.1);
   padding:15px;
-  margin:15px 0;
-  border-radius:15px;
-  transition:0.3s;
 }
 
-.section:hover{
-  transform:scale(1.02);
-  box-shadow:0 0 20px rgba(255,255,255,0.2);
+.card{
+  background:#141414;
+  padding:15px;
+  margin:12px 0;
+  border-radius:12px;
+  border:1px solid #222;
 }
 
-/* ألوان */
-.blue{color:#00aaff;}
-.green{color:#00ff66;}
-.red{color:#ff4444;}
-.purple{color:#b266ff;}
-.gold{color:#ffd700;}
-.gray{color:#aaa;}
+.price{
+  color:#ffd700;
+  margin-top:5px;
+}
 
-/* إنجليزي تحت كل خدمة */
-.small-en{
+.en{
   font-size:13px;
   color:#f1c40f;
   margin-top:5px;
@@ -97,114 +61,32 @@ header{
 .btn{
   display:block;
   text-align:center;
-  margin:30px auto;
+  margin:20px auto;
   padding:15px;
-  width:80%;
-  max-width:300px;
+  width:90%;
+  max-width:320px;
   border-radius:30px;
+  background:linear-gradient(270deg,#25D366,#00c6ff,#ff4ecd,#ffcc00);
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* زر ثابت */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#25D366;
+  padding:12px;
+  border-radius:50%;
+  font-size:22px;
   text-decoration:none;
   color:white;
-  font-size:18px;
-
-  background:linear-gradient(270deg,#25D366,#00c6ff,#ff4ecd,#ffcc00);
-  background-size:800% 800%;
-  animation:move 5s infinite linear, glow 1.5s infinite alternate;
 }
 
-@keyframes move{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-@keyframes glow{
-  from{box-shadow:0 0 5px white;}
-  to{box-shadow:0 0 25px white;}
-}
-
-/* رقم */
-.phone{
+/* عداد */
+.counter{
   text-align:center;
-  color:#00ff66;
-  margin-bottom:20px;
-}
-
-footer{
-  text-align:center;
-  padding:15px;
-  color:#aaa;
-  font-size:13px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="overlay">
-
-<header>
-  <div class="welcome">أهلاً بك في موقعي</div>
-  <div class="welcome-en">Welcome to my professional portfolio website</div>
-
-  <div class="name">الجبري حميد</div>
-  <div class="en">Al-Jabri Hamid</div>
-</header>
-
-<div class="container">
-
-  <div class="section blue">
-    ✔️ تصميم بوستات
-    <div class="small-en">Post Design</div>
-  </div>
-
-  <div class="section green">
-    ✔️ فيديو + مواقع
-    <div class="small-en">Video & Websites</div>
-  </div>
-
-  <div class="section red">
-    ✔️ صفحات هبوط
-    <div class="small-en">Landing Pages</div>
-  </div>
-
-  <div class="section purple">
-    ✔️ تسويق رقمي
-    <div class="small-en">Digital Marketing</div>
-  </div>
-
-  <div class="section blue">
-    ✔️ إشعارات وبوستات
-    <div class="small-en">Posts & Notifications</div>
-  </div>
-
-  <div class="section green">
-    ✔️ فيديو وصناعة محتوى
-    <div class="small-en">Content Creation</div>
-  </div>
-
-  <div class="section gold">
-    ✔️ كتابة مقالات ومحتوى مواقع
-    <div class="small-en">Article Writing</div>
-  </div>
-
-  <div class="section gray">
-    ✔️ تصميم شعارات + UI/UX
-    <div class="small-en">Logo & UI/UX Design</div>
-  </div>
-
-</div>
-
-<a class="btn" href="https://wa.me/773488133" target="_blank">
-💬 تواصل واتساب
-</a>
-
-<div class="phone">☎️ 773488133</div>
-
-<footer>
-موقع احترافي - All Rights Reserved
-</footer>
-
-</div>
-
-</body>
-</html>
+  margin:20px;
+  color:#ccc;
