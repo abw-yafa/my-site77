@@ -143,4 +143,99 @@ footer{
 <body>
 
 <!-- خلفية برمجة -->
-<canvas id="
+<canvas id="matrix"></canvas>
+
+<div class="content">
+
+<div class="welcome">👋 مرحباً بك في موقعي | Welcome To My Website</div>
+
+<div class="name">الجبري حميد</div>
+<div class="name-en">Al-Jabri Hamid</div>
+
+<!-- المشاريع -->
+<div class="box blue">✔️ تصميم بوستات<span class="en">Post Design</span></div>
+<div class="box green">✔️ فيديو + مواقع<span class="en">Video & Websites</span></div>
+<div class="box red">✔️ صفحات هبوط<span class="en">Landing Pages</span></div>
+<div class="box purple">✔️ تسويق رقمي<span class="en">Digital Marketing</span></div>
+<div class="box orange">✔️ إشعارات وبوستات<span class="en">Posts & Notifications</span></div>
+<div class="box cyan">✔️ صناعة محتوى فيديو<span class="en">Video Content</span></div>
+<div class="box gold">✔️ كتابة مقالات<span class="en">Article Writing</span></div>
+<div class="box pink">✔️ تصميم شعارات<span class="en">Logo Design</span></div>
+<div class="box lime">✔️ UI / UX تصميم<span class="en">UI / UX Design</span></div>
+<div class="box green">✔️ خدمات واتساب مباشرة<span class="en">WhatsApp Services</span></div>
+
+<!-- واتساب (مهم جداً) -->
+<a class="btn" href="https://wa.me/773488133" target="_blank">
+💬 تواصل واتساب
+</a>
+
+<div class="phone">📞 773488133</div>
+
+<div class="visitors">
+👁️ عدد الزوار:
+<span id="count">0</span>
+</div>
+
+<footer>
+All Rights Reserved | جميع الحقوق محفوظة
+</footer>
+
+</div>
+
+<script>
+
+/* خلفية برمجة */
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*";
+letters = letters.split("");
+
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+
+let drops = [];
+
+for(let i=0;i<columns;i++){
+  drops[i] = 1;
+}
+
+function draw(){
+  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle = "#00ff66";
+  ctx.font = fontSize + "px monospace";
+
+  for(let i=0;i<drops.length;i++){
+    let text = letters[Math.floor(Math.random()*letters.length)];
+    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+
+    if(drops[i]*fontSize > canvas.height && Math.random() > 0.975){
+      drops[i] = 0;
+    }
+    drops[i]++;
+  }
+}
+
+setInterval(draw, 33);
+
+/* عداد الزوار */
+let count = localStorage.getItem("visits");
+
+if(!count){
+  count = 1;
+}else{
+  count = parseInt(count) + 1;
+}
+
+localStorage.setItem("visits", count);
+document.getElementById("count").innerText = count;
+
+</script>
+
+</body>
+</html>
