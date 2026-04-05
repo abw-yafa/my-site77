@@ -5,20 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الجبري حميد | Al-Jabri Hamid</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&family=Scheherazade+New&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&display=swap" rel="stylesheet">
 
 <style>
+
+/* خلفية برمجة متحركة */
 body{
   margin:0;
   font-family:'Cairo', sans-serif;
   color:white;
   text-align:center;
-  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
-  background-size:cover;
+  overflow-x:hidden;
+  background:#000;
 }
 
+/* خلفية مربعات متحركة */
+.background{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.background span{
+  position:absolute;
+  display:block;
+  width:20px;
+  height:20px;
+  background:rgba(0,255,100,0.15);
+  animation:move 10s linear infinite;
+  bottom:-150px;
+}
+
+@keyframes move{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-1200px) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* طبقة الموقع */
 .overlay{
-  background:rgba(0,0,0,0.78);
+  background:rgba(0,0,0,0.75);
   min-height:100vh;
   padding:20px;
 }
@@ -26,15 +61,13 @@ body{
 /* ترحيب */
 .welcome{
   font-size:22px;
-  color:#fff;
   animation:fade 3s infinite;
-  margin-top:10px;
 }
 
 @keyframes fade{
-  0%{opacity:0.2; transform:translateY(-10px);}
+  0%{opacity:0.2;}
   50%{opacity:1;}
-  100%{opacity:0.2; transform:translateY(-10px);}
+  100%{opacity:0.2;}
 }
 
 /* الاسم */
@@ -42,20 +75,17 @@ body{
   font-family:'Amiri', serif;
   font-size:60px;
   color:#8B5A2B;
-  margin-top:10px;
 }
 
 .name-en{
-  font-size:18px;
   color:#fff;
   border:2px solid #fff;
   display:inline-block;
   padding:6px 15px;
-  margin-top:5px;
   border-radius:10px;
 }
 
-/* المشاريع */
+/* الخدمات */
 .box{
   margin:10px auto;
   padding:12px;
@@ -68,25 +98,23 @@ body{
 }
 
 .box:hover{
-  transform:scale(1.03);
-  box-shadow:0 0 15px rgba(255,255,255,0.2);
+  transform:scale(1.04);
+  box-shadow:0 0 20px rgba(0,255,100,0.2);
 }
 
 /* ألوان */
-.blue{color:#00aaff; font-weight:bold;}
-.green{color:#00ff66; font-weight:bold;}
-.red{color:#ff4444; font-weight:bold;}
-.purple{color:#cc66ff; font-weight:bold;}
-.gold{color:#ffd700; font-weight:bold;}
-.gray{color:#ffffff; font-weight:bold;}
+.blue{color:#00aaff;font-weight:bold;}
+.green{color:#00ff66;font-weight:bold;}
+.red{color:#ff4444;font-weight:bold;}
+.purple{color:#cc66ff;font-weight:bold;}
+.gold{color:#ffd700;font-weight:bold;}
 
-/* نص إنجليزي تحت */
+/* إنجليزي */
 .en{
   display:block;
-  font-size:14px;
   color:#ffd700;
+  font-size:13px;
   margin-top:5px;
-  font-style:italic;
 }
 
 /* زر واتساب */
@@ -95,15 +123,15 @@ body{
   margin:25px;
   padding:14px 25px;
   border-radius:30px;
-  text-decoration:none;
   color:white;
+  text-decoration:none;
   font-size:18px;
-  background:linear-gradient(270deg,#25D366,#00c6ff,#ffcc00,#ff4ecd);
+  background:linear-gradient(270deg,#25D366,#00c6ff,#ffcc00);
   background-size:400% 400%;
-  animation:move 5s infinite linear;
+  animation:movebtn 5s infinite linear;
 }
 
-@keyframes move{
+@keyframes movebtn{
   0%{background-position:0% 50%;}
   50%{background-position:100% 50%;}
   100%{background-position:0% 50%;}
@@ -112,8 +140,6 @@ body{
 /* زوار */
 .visitors{
   margin-top:10px;
-  font-size:18px;
-  color:#fff;
 }
 
 /* رقم */
@@ -128,81 +154,50 @@ footer{
   font-size:12px;
   color:#aaa;
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- خلفية متحركة -->
+<div class="background">
+  <span style="left:5%; animation-delay:0s;"></span>
+  <span style="left:15%; animation-delay:2s;"></span>
+  <span style="left:25%; animation-delay:4s;"></span>
+  <span style="left:35%; animation-delay:1s;"></span>
+  <span style="left:45%; animation-delay:3s;"></span>
+  <span style="left:55%; animation-delay:5s;"></span>
+  <span style="left:65%; animation-delay:2s;"></span>
+  <span style="left:75%; animation-delay:4s;"></span>
+  <span style="left:85%; animation-delay:1s;"></span>
+</div>
+
 <div class="overlay">
 
-  <!-- ترحيب -->
-  <div class="welcome">👋 مرحباً بك في موقعي | Welcome to my website</div>
+  <div class="welcome">👋 مرحباً بك في موقعي | Welcome To My Website</div>
 
-  <!-- الاسم -->
   <div class="name">الجبري حميد</div>
   <div class="name-en">Al-Jabri Hamid</div>
 
-  <!-- المشاريع -->
+  <!-- الخدمات -->
+  <div class="box blue">✔️ تصميم بوستات<span class="en">Post Design</span></div>
+  <div class="box green">✔️ فيديو ومواقع<span class="en">Video & Websites</span></div>
+  <div class="box red">✔️ صفحات هبوط<span class="en">Landing Pages</span></div>
+  <div class="box purple">✔️ تسويق رقمي<span class="en">Digital Marketing</span></div>
+  <div class="box gold">✔️ محتوى ومقالات<span class="en">Content Writing</span></div>
 
-  <div class="box blue">
-    ✔️ تصميم بوستات
-    <span class="en">Post Design</span>
-  </div>
+  <div class="box green">✔️ خدمات واتساب مباشرة<span class="en">WhatsApp Services</span></div>
 
-  <div class="box green">
-    ✔️ فيديو ومواقع
-    <span class="en">Videos & Websites</span>
-  </div>
-
-  <div class="box red">
-    ✔️ صفحات هبوط
-    <span class="en">Landing Pages</span>
-  </div>
-
-  <div class="box purple">
-    ✔️ تسويق رقمي
-    <span class="en">Digital Marketing</span>
-  </div>
-
-  <div class="box gray">
-    ✔️ تصميم إشعارات وبوستات
-    <span class="en">Notifications & Posts Design</span>
-  </div>
-
-  <div class="box gray">
-    ✔️ صناعة فيديو ومحتوى
-    <span class="en">Video & Content Creation</span>
-  </div>
-
-  <div class="box gold">
-    ✔️ كتابة مقالات ومحتوى مواقع
-    <span class="en">Articles & Website Content</span>
-  </div>
-
-  <div class="box gray">
-    ✔️ تصميم شعارات (Logo Design)
-    <span class="en">Logo Design</span>
-  </div>
-
-  <div class="box gray">
-    ✔️ تصميم واجهات (UI/UX)
-    <span class="en">UI / UX Design</span>
-  </div>
-
-  <div class="box green">
-    ✔️ خدمات رقمية واتساب مباشر
-    <span class="en">WhatsApp Direct Services</span>
-  </div>
-
-  <!-- زر واتساب -->
+  <!-- واتساب -->
   <a class="btn" href="https://wa.me/773488133" target="_blank">
-    💬 تواصل واتساب | WhatsApp
+    💬 تواصل واتساب
   </a>
 
   <!-- رقم -->
   <div class="phone">📞 773488133</div>
 
-  <!-- عداد زوار -->
+  <!-- زوار -->
   <div class="visitors">
     👁️ عدد الزوار:
     <span id="count">0</span>
@@ -215,7 +210,7 @@ footer{
 </div>
 
 <script>
-// عداد زوار بسيط بدون Firebase
+// عداد زوار بسيط
 let count = localStorage.getItem("visits");
 
 if(!count){
