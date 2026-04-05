@@ -5,147 +5,170 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الجبري حميد | Al-Jabri Hamid</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   font-family:'Cairo', sans-serif;
-  background:#0a0a0a;
+  background:linear-gradient(#000,#0b0b0b,#000);
   color:white;
-}
-
-/* الهيدر */
-header{
   text-align:center;
-  padding:25px;
 }
 
-.name{
-  font-size:45px;
-  color:#00ff99;
+/* ترحيب */
+.welcome{
+  font-size:28px;
+  margin-top:25px;
+  animation:fadeIn 2s ease, glow 2s infinite alternate;
 }
 
 .sub{
-  color:#aaa;
   font-size:14px;
+  color:#ccc;
+  margin-bottom:10px;
 }
 
-/* الأقسام */
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:15px;
+/* حركة */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(-20px);}
+  to{opacity:1;}
 }
 
-.card{
-  background:#141414;
-  padding:15px;
-  margin:12px 0;
-  border-radius:12px;
-  border:1px solid #222;
+@keyframes glow{
+  from{text-shadow:0 0 5px #fff;}
+  to{text-shadow:0 0 20px #00ffcc;}
 }
 
-.price{
-  color:#ffd700;
+/* الاسم */
+.name{
+  font-family:'Amiri', serif;
+  font-size:55px;
+  color:#8B4513;
+}
+
+.name-en{
+  font-size:18px;
+  border:2px solid #fff;
+  display:inline-block;
+  padding:5px 15px;
   margin-top:5px;
 }
+
+/* صندوق */
+.container{
+  max-width:850px;
+  margin:auto;
+  padding:20px;
+}
+
+.box{
+  background:rgba(255,255,255,0.05);
+  padding:15px;
+  border-radius:15px;
+  margin:15px 0;
+}
+
+/* ألوان */
+.blue{color:#00aaff;}
+.green{color:#00ff66;}
+.red{color:#ff4444;}
+.purple{color:#cc66ff;}
+.gold{color:#ffd700;}
+.gray{color:#ccc;}
 
 .en{
   font-size:13px;
-  color:#f1c40f;
-  margin-top:5px;
+  color:#ffd700;
+  margin-bottom:8px;
 }
 
-/* زر واتساب */
+/* زر */
 .btn{
+  margin:25px auto;
   display:block;
-  text-align:center;
-  margin:20px auto;
+  width:80%;
   padding:15px;
-  width:90%;
-  max-width:320px;
   border-radius:30px;
-  background:linear-gradient(270deg,#25D366,#00c6ff,#ff4ecd,#ffcc00);
+  background:linear-gradient(270deg,#25D366,#00c6ff,#ff00cc,#ffcc00);
   color:white;
   text-decoration:none;
-  font-size:18px;
 }
 
-/* زر ثابت */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  background:#25D366;
-  padding:12px;
-  border-radius:50%;
-  font-size:22px;
-  text-decoration:none;
-  color:white;
-}
-
-/* عداد */
-.counter{
-  text-align:center;
-  margin:20px;
-  color:#ccc;
+/* رقم */
+.phone{
+  color:#00ff66;
+  margin-bottom:20px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="name">الجبري حميد</div>
-  <div class="sub">خدمات رقمية احترافية</div>
-  <div class="sub">Professional Digital Services</div>
-</header>
+<!-- ترحيب -->
+<div class="welcome">أهلاً بك في موقعي</div>
+<div class="sub">Welcome to my website</div>
+
+<!-- الاسم -->
+<div class="name">الجبري حميد</div>
+<div class="name-en">Al-Jabri Hamid</div>
 
 <div class="container">
 
-  <div class="card">
-    ✔️ تصميم بوستات
-    <div class="en">Post Design</div>
-    <div class="price">5$</div>
-  </div>
+<div class="box">
 
-  <div class="card">
-    ✔️ إنشاء مواقع
-    <div class="en">Website Development</div>
-    <div class="price">20$</div>
-  </div>
+<div class="blue">✔️ تصميم بوستات</div>
+<div class="en">Post Design</div>
 
-  <div class="card">
-    ✔️ تسويق رقمي
-    <div class="en">Digital Marketing</div>
-    <div class="price">10$</div>
-  </div>
+<div class="green">✔️ فيديو + مواقع</div>
+<div class="en">Video & Website Creation</div>
 
-  <div class="card">
-    ✔️ فيديوهات وصناعة محتوى
-    <div class="en">Video & Content Creation</div>
-    <div class="price">7$</div>
-  </div>
+<div class="red">✔️ صفحات هبوط</div>
+<div class="en">Landing Pages</div>
+
+<div class="purple">✔️ تسويق رقمي</div>
+<div class="en">Digital Marketing</div>
 
 </div>
 
-<a class="btn" href="https://wa.me/773488133" target="_blank">
-💬 تواصل واتساب | Contact WhatsApp
+<div class="box">
+
+<div>✔️ تصميم إشعارات وبوستات</div>
+<div class="en">Post & Notification Design</div>
+
+<div>✔️ فيديوهات وصناعة محتوى</div>
+<div class="en">Video & Content Creation</div>
+
+</div>
+
+<div class="box">
+
+<div class="gold">✔️ كتابة مقالات ومحتوى مواقع</div>
+<div class="en">Content Writing & Articles</div>
+
+</div>
+
+<div class="box">
+
+<div class="gray">✔️ تصميم شعارات</div>
+<div class="en">Logo Design</div>
+
+<div class="gray">✔️ تصميم واجهات UI/UX</div>
+<div class="en">UI/UX Design</div>
+
+</div>
+
+</div>
+
+<a class="btn" href="https://wa.me/773488133">
+💬 تواصل واتساب  
+<br>Contact WhatsApp
 </a>
 
-<div class="counter">
-👁 عدد الزوار | Visitors: <span id="visits">0</span>
+<div class="phone">
+📞 773488133  
+<br>Phone Number
 </div>
-
-<a class="whatsapp" href="https://wa.me/773488133">💬</a>
-
-<script>
-let count = localStorage.getItem("visits") || 0;
-count++;
-localStorage.setItem("visits", count);
-document.getElementById("visits").innerText = count;
-</script>
 
 </body>
 </html>
