@@ -12,13 +12,13 @@
 body{
   margin:0;
   font-family:'Cairo', sans-serif;
-  background:black;
+  background:#000;
   color:white;
   text-align:center;
   overflow:hidden;
 }
 
-/* 🎯 خلفية البرمجة (Matrix Effect) */
+/* خلفية برمجة */
 canvas{
   position:fixed;
   top:0;
@@ -26,7 +26,7 @@ canvas{
   z-index:-1;
 }
 
-/* طبقة الموقع */
+/* المحتوى */
 .content{
   position:relative;
   z-index:1;
@@ -87,6 +87,7 @@ canvas{
 .gold{color:#ffd700;font-weight:bold;}
 .orange{color:#ff8800;font-weight:bold;}
 .cyan{color:#00ffff;font-weight:bold;}
+.pink{color:#ff4ecd;font-weight:bold;}
 .lime{color:#aaff00;font-weight:bold;}
 
 /* إنجليزي */
@@ -96,88 +97,50 @@ canvas{
   color:#ffd700;
 }
 
-/* زر */
+/* زر واتساب */
 .btn{
   display:inline-block;
-  margin:20px;
+  margin:25px;
   padding:14px 25px;
   border-radius:30px;
-  text-decoration:none;
   color:white;
+  text-decoration:none;
+  font-size:18px;
   background:linear-gradient(270deg,#25D366,#00c6ff,#ffcc00,#ff4ecd);
+  background-size:400% 400%;
+  animation:btn 5s linear infinite;
+  position:relative;
+  z-index:10;
+}
+
+@keyframes btn{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 /* زوار */
-.visitors{margin-top:10px;}
+.visitors{
+  margin-top:10px;
+}
+
+/* رقم */
+.phone{
+  color:#00ff66;
+  margin-top:10px;
+}
+
+/* footer */
+footer{
+  margin-top:20px;
+  font-size:12px;
+  color:#aaa;
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- 🎯 خلفية البرمجة -->
-<canvas id="matrix"></canvas>
-
-<div class="content">
-
-<div class="welcome">👋 مرحباً بك في موقعي</div>
-
-<div class="name">الجبري حميد</div>
-<div class="name-en">Al-Jabri Hamid</div>
-
-<div class="box blue">✔️ تصميم بوستات<span class="en">Post Design</span></div>
-<div class="box green">✔️ فيديو + مواقع<span class="en">Video & Websites</span></div>
-<div class="box red">✔️ صفحات هبوط<span class="en">Landing Pages</span></div>
-<div class="box purple">✔️ تسويق رقمي<span class="en">Digital Marketing</span></div>
-<div class="box gold">✔️ محتوى ومقالات<span class="en">Content Writing</span></div>
-<div class="box lime">✔️ خدمات واتساب<span class="en">WhatsApp Services</span></div>
-
-<a class="btn" href="https://wa.me/773488133">💬 واتساب</a>
-
-</div>
-
-<script>
-
-/* 🎯 Matrix Code Background */
-const canvas = document.getElementById("matrix");
-const ctx = canvas.getContext("2d");
-
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-
-let letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*()*&^%";
-letters = letters.split("");
-
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-
-const drops = [];
-
-for(let x=0;x<columns;x++){
-  drops[x]=1;
-}
-
-function draw(){
-  ctx.fillStyle="rgba(0,0,0,0.05)";
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-
-  ctx.fillStyle="#00ff66";
-  ctx.font = fontSize+"px monospace";
-
-  for(let i=0;i<drops.length;i++){
-    const text = letters[Math.floor(Math.random()*letters.length)];
-    ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-
-    if(drops[i]*fontSize>canvas.height && Math.random()>0.975){
-      drops[i]=0;
-    }
-    drops[i]++;
-  }
-}
-
-setInterval(draw,33);
-
-</script>
-
-</body>
-</html>
+<!-- خلفية برمجة -->
+<canvas id="
